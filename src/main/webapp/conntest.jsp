@@ -78,12 +78,12 @@
                   }
               }
 
-//              try {
-//                  Thread.sleep(10);
-//              } catch (InterruptedException e) {
-//                  e.printStackTrace();
-//                  Thread.currentThread().interrupt();
-//              }
+              try {
+                  Thread.sleep(10);
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+                  Thread.currentThread().interrupt();
+              }
           }
       } catch (SQLException e) {
           System.out.println("Exception received creating connection: " + i);
@@ -93,6 +93,7 @@
               c.close();
           }
 
+          ps.close();
       }
   %>
   <p>Number of connections created = <%=i%></p>
